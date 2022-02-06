@@ -21,4 +21,14 @@
 
 		<hook function="alternateemail_general_settings" hook="integrate_general_settings" file="$sourcedir/AlternateEmail.php" reverse="true" />
 	</uninstall>
+	
+	<install for="2.0.*">
+		<modification format="xml" type="file">install20.xml</modification>
+		<modification format="xml" type="file">english.xml</modification>
+	</install>
+	
+	<uninstall for="2.0.*">
+		<modification format="xml" type="file" reverse="true">install20.xml</modification>
+		<modification format="xml" type="file" reverse="true">english.xml</modification>
+	</uninstall>
 </package-info>
