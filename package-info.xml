@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<id>SimpleDeskTeam:AlternateEmail</id>
+	<name>Alternate Email</name>
+	<version>2.0</version>
+	<type>modification</type>
+
+	<install for="2.1.*">
+		<require-file name="AlternateEmail.php" destination="$sourcedir" />
+		<require-file name="AlternateEmail.english.php" destination="$themes_dir/default/languages" />
+
+		<hook function="alternateemail_general_settings" hook="integrate_general_settings" file="$sourcedir/AlternateEmail.php" />
+
+		<redirect url="?action=admin;area=serversettings;sa=general" />
+	</install>
+	
+	<uninstall for="2.1.*">
+		<remove-file name="AlternateEmail.php" destination="$sourcedir" />
+		<remove-file name="AlternateEmail.english.php" destination="$themes_dir/default/languages" />
+
+		<hook function="alternateemail_general_settings" hook="integrate_general_settings" file="$sourcedir/AlternateEmail.php" reverse="true" />
+	</uninstall>
+</package-info>
